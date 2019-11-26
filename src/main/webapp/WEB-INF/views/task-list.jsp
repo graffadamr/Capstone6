@@ -16,16 +16,30 @@
 	<div class="container">
 		<h1>Create a New Task</h1>
 		<form action="add-task">
-		<textarea row="3" cols="80" name="description">Your description of the task here . . .</textarea><br>
-		<input type="text" name="duedate" placeholder="Date due">  
-		<input type="submit" value="Submit">
-		
+			<textarea row="3" cols="80" name="description">Your description of the task here . . .</textarea>
+			<br> <input type="text" name="duedate" placeholder="Date due">
+			<input type="submit" value="Submit">
+
 		</form>
 		<br>
-		<h1>See Your Tasks</h1>
-		<form action="view-tasks">
-		<input type="submit" value="Click here!">
-		</form>
+		<h1>Your Tasks</h1>
+		<table class="table">
+			<tr>
+				<th>Description</th>
+				<th>Due Date</th>
+				<th>Mark Complete</th>
+			</tr>
+			<c:forEach var="t" items="${tasks}">
+
+				<tr>
+					<td>"${t.description}"</td>
+					<td>"${t.duedate}"</td>
+					<td><button type="submit" action="delete"
+							class="btn btn-primary">Complete</button>
+				</tr>
+			</c:forEach>
+		</table>
+
 
 
 

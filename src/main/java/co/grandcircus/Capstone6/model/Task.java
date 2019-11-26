@@ -15,7 +15,7 @@ public class Task {
 	private Integer taskid;
 	private String description;
 	private String duedate;
-	private boolean complete;
+	private Boolean complete = false;
 	
 	@ManyToOne
 	private User user;
@@ -23,6 +23,15 @@ public class Task {
 	public Task() {
 		super();
 	}
+
+	public Task(String description, String duedate) {
+		super();
+		this.description = description;
+		this.duedate = duedate;
+	}
+
+
+
 
 	public Task(Integer taskid, String description, String duedate, boolean complete, User user) {
 		super();

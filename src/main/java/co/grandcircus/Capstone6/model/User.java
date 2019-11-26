@@ -19,7 +19,7 @@ public class User {
 	private String password;
 	
 	@OneToMany(mappedBy = "user", orphanRemoval = true)
-	List<Task> tasks;
+	private List<Task> tasks;
 
 
 	
